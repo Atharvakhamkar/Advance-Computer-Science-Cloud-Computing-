@@ -9,56 +9,56 @@ It will serve as a personal knowledge hub and a reference for modules, projects,
 
 📌 Requirements
 
-Basic knowledge of programming (Java/Python/C++)
+● Basic knowledge of programming (Java/Python/C++)
 
-Understanding of data structures, algorithms, and database management systems (DMS)
+● Understanding of data structures, algorithms, and database management systems (DMS)
 
-Familiarity with operating systems and computer networks
+● Familiarity with operating systems and computer networks
 
-Interest in cloud platforms, distributed systems, and software architecture
+● Interest in cloud platforms, distributed systems, and software architecture
 
 📚 Modules / Topics Covered
 
-Semester 1
+◆ Semester 1
 
-Advanced Software Engineering
+● Advanced Software Engineering
 
-Distributed Systems
+● Distributed Systems
 
-Programming for Data Science
+● Programming for Data Science
 
-Knowledge Representation and Reasoning
+● Knowledge Representation and Reasoning
 
-Semester 2 (planned / elective specialisation in cloud computing)
+◆ Semester 2 (planned / elective specialisation in cloud computing)
 
-Cloud Computing Fundamentals
+● Cloud Computing Fundamentals
 
-Virtualization & Containerization (Docker, Kubernetes)
+● Virtualization & Containerization (Docker, Kubernetes)
 
-Security in Cloud Computing
+● Security in Cloud Computing
 
-High Performance & Scalable Architectures
+● High Performance & Scalable Architectures
 
-Data Mining & Text Analytics
+● Data Mining & Text Analytics
 
-Project / Dissertation
+→ Project / Dissertation
 
-Cloud-native project exploring real-world scalability, DevOps, or data-driven applications.
+● Cloud-native project exploring real-world scalability, DevOps, or data-driven applications.
 
 📂 Contents of this Repository
 
-Notes – Detailed lecture notes and summaries
+● Notes – Detailed lecture notes and summaries
 
-Code Snippets – Small projects, demos, and POCs
+● Code Snippets – Small projects, demos, and POCs
 
-Diagrams – UML, architecture, and system design visuals
+● Diagrams – UML, architecture, and system design visuals
 
-Study Material – References, reading lists, and external resources
+● Study Material – References, reading lists, and external resources
 
-Coursework Prep – Assignments, practice problems, revision notes
+● Coursework Prep – Assignments, practice problems, revision notes
 
-Exam Prep – Key formulas, concepts, and past-paper insights
+● Exam Prep – Key formulas, concepts, and past-paper insights
 
 ⚠️ Disclaimer
 
-This repository is for personal academic use. Content may not represent official University of Leeds material. Always cross-check with official course resources.
+✕ This repository is for personal academic use. Content may not represent official University of Leeds material. Always cross-check with official course resources. ✕
