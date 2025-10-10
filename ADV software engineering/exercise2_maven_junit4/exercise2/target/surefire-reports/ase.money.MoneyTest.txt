@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 -------------------------------------------------------------------------------
 Test set: ase.money.MoneyTest
 -------------------------------------------------------------------------------
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in ase.money.MoneyTest
+=======
+-------------------------------------------------------------------------------
+Test set: ase.money.MoneyTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.033 s -- in ase.money.MoneyTest
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472

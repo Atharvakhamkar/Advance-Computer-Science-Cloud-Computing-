@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 % Saved by Prover9-Mace4 Version 0.5, December 2007.
+=======
+
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+% Last line is a lie. It is there to stop the Prover9-Mace4
+% GUI giving a warning when the file is loaded.
+% This file was actually reated by BB Prover9 Autograder
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
 
 set(ignore_option_dependencies). % GUI handles dependencies
 
@@ -12,6 +20,10 @@ if(Prover9). % Options for Prover9
   assign(eq_defs, pass).
   assign(max_seconds, 10).
   assign(max_weight, 2147483647).
+<<<<<<< HEAD
+=======
+  assign(sos_limit, -1).
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
   clear(predicate_elim).
   set(binary_resolution).
   set(paramodulation).
@@ -22,6 +34,7 @@ if(Mace4).   % Options for Mace4
   assign(max_seconds, 60).
 end_if.
 
+<<<<<<< HEAD
 if(Prover9). % Additional input for Prover9
 assign(sos_limit, -1).
 % Last line is a lie. It is there to stop the Prover9-Mace4
@@ -29,6 +42,8 @@ assign(sos_limit, -1).
 % This file was actually reated by BB Prover9 Autograder
 end_if.
 
+=======
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
 formulas(assumptions).
 
 %% A Famous Syllogism
@@ -57,6 +72,7 @@ formulas(assumptions).
 %%
 %% Use only the specified vocabulary, otherwise the autograder will not work.
 
+<<<<<<< HEAD
 %% A1: "All Greeks are men."
 
         all (x) (Greek (x)-> Man(x)).
@@ -64,6 +80,18 @@ formulas(assumptions).
 %% A2: "All men are mortal."
 
         all(x) (Man(x) -> Mortal(x)).
+=======
+
+
+%% A1: "All Greeks are men."
+
+        __A1__.
+
+%% A2: "All men are mortal."
+
+        __A2__.
+
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
 
 end_of_list.
 
@@ -71,7 +99,13 @@ formulas(goals).
 
 %% GOAL: "All Greeks are mortal."
 
+<<<<<<< HEAD
           all(x) (Greek(x) -> Mortal(x)).
 
 end_of_list.
 
+=======
+          __G__.
+
+end_of_list.
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472

@@ -18,7 +18,11 @@ to each price code.
 
 The rental company operates a loyalty scheme in which customers can
 accumulate 'frequent renter points'.  They normally get 1 frequent renter
+<<<<<<< HEAD
 point for each rental, but get an extra bonus point if they are renting6
+=======
+point for each rental, but get an extra bonus point if they are renting
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
 a new model for at least 3 days.
 
 ## Tasks
