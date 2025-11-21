@@ -61,4 +61,4 @@ It will serve as a personal knowledge hub and a reference for modules, projects,
 
 ⚠️ Disclaimer
 
-✕ This repository is for personal academic use. Content may not represent official University of Leeds material. Always cross-check with official course resources. ✕
+✕ This repository is for personal academic use . Content may  represent official University of Leeds material. Always cross-check with official course resources and take approval before using it. ✕
