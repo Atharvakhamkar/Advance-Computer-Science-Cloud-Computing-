@@ -1,0 +1,229 @@
+BB Prover9 AutoGrader
+
+Checking submitted files ...
+Found submitted files: academy.p9, hotspot.p9
+username: fdxg0100
+This is submission number 1
+** You should not make more than 10 submissions **
+** 4 marks (of 40 total) will be deducted for each submission after the 10th **
+
+
+======== Grading 'hotspot.p9'========
+Checking problem: hotspot
+Extracting formulae from your file 'hotspot.p9' ...
+Found 8 assumptions and 1 goal
+The expected number of formulae were extracted :)
+Will first check each formula individually ...
+
+
+Assumptions:
+   1: "The laptop is always in hotspot range of my phone except when one is in the kitchen and the other in the wash room."
+      Submitted formula:
+         LaptopInHotSpotRangePhone <-> -((LaptopInKitchen & PhoneInWashRoom) | (LaptopInWashRoom & PhoneInKitchen)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   2: "If the smart speaker light is flashing, the WiFi is down."
+      Submitted formula:
+         SmartSpeakerFlashing -> -WiFiUp.
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   3: "If laptop is offline and I hear music, then I must be wearing earbuds."
+      Submitted formula:
+         (-LaptopOnline & IHearMusic) -> WearingEarbuds.
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   4: "If the the phone is in the kitchen, it is either on the table or on the sofa."
+      Submitted formula:
+         PhoneInKitchen -> (PhoneOnTable | PhoneOnSofa).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   5: "The laptop is online if and only if either: (a) the WiFi is up; or (b) the phone is connected to 5G and the phone is in hotspot range."
+      Submitted formula:
+         LaptopOnline <-> (WiFiUp | (PhoneOn5G & LaptopInHotSpotRangePhone)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   6: "The phone is neither on the table nor on the sofa."
+      Submitted formula:
+         -PhoneOnTable & -PhoneOnSofa.
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   7: "I hear music, the smart speaker light is flashing and laptop is in the kitchen."
+      Submitted formula:
+         IHearMusic & SmartSpeakerFlashing & LaptopInKitchen.
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   8: "The phone is in one of three rooms: kitchen or lounge, or wash room."
+      Submitted formula:
+         PhoneInKitchen | PhoneInLounge | PhoneInWashRoom.
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+Goal: "Unless I'm wearing earbuds, the phone is in the lounge."
+      Submitted formula:
+         -WearingEarbuds -> PhoneInLounge.
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+
+
+======== Grading 'academy.p9'========
+Checking problem: academy
+Extracting formulae from your file 'academy.p9' ...
+Found 10 assumptions and 1 goal
+The expected number of formulae were extracted :)
+Will first check each formula individually ...
+
+
+Assumptions:
+   1: "At least two painters are younger than Theano."
+      Submitted formula:
+         exists x exists y (Painter(x) & Painter(y) & -(x = y) & Younger(x,theano) & Younger(y,theano)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   2: "Anyone who admires someone older than themself dreams of success."
+      Submitted formula:
+         all x all y ((Admires(x,y) & Older(y,x)) -> DreamsOfSuccess(x)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   3: "If someone is older than another person, then they are older than everyone who is younger than the other."
+      Submitted formula:
+         all x all y all z ((Older(x,y) & Younger(z,y)) -> Older(x,z)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   4: "Every painter admires exactly one logician (they do not necessarily admire the same one)."
+      Submitted formula:
+         all x (Painter(x) -> (exists y (Logician(y) & Admires(x,y) & all z ((Logician(z) & Admires(x,z)) -> z = y)))).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   5: "Among logicians, only Plato is admired by someone younger than Theano."
+      Submitted formula:
+         all x all y ((Logician(x) & Younger(y,theano) & Admires(y,x)) -> x = plato).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   6: "No engineer is a painter."
+      Submitted formula:
+         all x (-(Engineer(x) & Painter(x))).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   7: "Anyone who dreams of success and is happy is not a poet."
+      Submitted formula:
+         all x ((DreamsOfSuccess(x) & Happy(x)) -> -Poet(x)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   8: "Admiration implies imitation."
+      Submitted formula:
+         all x all y (Admires(x,y) -> Imitates(x,y)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+   9: "The only logician who is older than Theano is Plato."
+      Submitted formula:
+         Logician(plato) & Older(plato,theano) & all x ((Logician(x) & Older(x,theano)) -> x = plato).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+  10: "Everyone who imitates a logician is either a poet or a engineer."
+      Submitted formula:
+         all x all y ((Imitates(x,y) & Logician(y)) -> (Poet(x) | Engineer(x))).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+Goal: "Not all poets are happy"
+      Submitted formula:
+         exists x (Poet(x) & -Happy(x)).
+
+
+      Testing equivalence to the expected solution ...
+      (feedback will be available when grades published)
+
+
+
+
+      *** GRADING SUMMARY ***
+   Problem          Mark Range
+   ----------------------------------------------------
+   hotspot          > 60%  **VERY GOOD**
+   academy          > 60%  **VERY GOOD**
+   ====================================================
+   TOTAL MARK       > 60%  **VERY GOOD**
+   ----------------------------------------------------
+Ungraded
+Assignment 1 (Hotspot and The Academy logic problems)
+Student
+Atharva Khamkar
+Total Points
+- / 40 pts
+
+Autograder Score
+- / 40.0

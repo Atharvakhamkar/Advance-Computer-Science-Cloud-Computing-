@@ -1,12 +1,4 @@
-<<<<<<< HEAD
 % Saved by Prover9-Mace4 Version 0.5, December 2007.
-=======
-
-% Saved by Prover9-Mace4 Version 0.5, December 2007.
-% Last line is a lie. It is there to stop the Prover9-Mace4
-% GUI giving a warning when the file is loaded.
-% This file was actually reated by BB Prover9 Autograder
->>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
 
 set(ignore_option_dependencies). % GUI handles dependencies
 
@@ -20,10 +12,6 @@ if(Prover9). % Options for Prover9
   assign(eq_defs, pass).
   assign(max_seconds, 10).
   assign(max_weight, 2147483647).
-<<<<<<< HEAD
-=======
-  assign(sos_limit, -1).
->>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
   clear(predicate_elim).
   set(binary_resolution).
   set(paramodulation).
@@ -34,16 +22,36 @@ if(Mace4).   % Options for Mace4
   assign(max_seconds, 60).
 end_if.
 
-<<<<<<< HEAD
 if(Prover9). % Additional input for Prover9
+<<<<<<< HEAD
+=======
+  assign(sos_limit, -1).
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
+
 assign(sos_limit, -1).
 % Last line is a lie. It is there to stop the Prover9-Mace4
 % GUI giving a warning when the file is loaded.
 % This file was actually reated by BB Prover9 Autograder
-end_if.
+<<<<<<< HEAD
+=======
+
+% Last line is a lie. It is there to stop the Prover9-Mace4
+% GUI giving a warning when the file is loaded.
+% This file was actually reated by BB Prover9 Autograder
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
+
+<<<<<<< HEAD
 
 =======
 >>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
+
+=======
+          __G__.
+
+end_of_list.
+>>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
+end_if.
+
 formulas(assumptions).
 
 %% Furry Reptiles
@@ -71,26 +79,13 @@ formulas(assumptions).
 %%
 %% Use only the specified vocabulary, otherwise the autograder will not work.
 
-<<<<<<< HEAD
 %% A1: "No reptiles have fur."
 
-        -all(x)(Reptile(x) -> HasFur(x)).
+        all(x)(Reptile(x) -> -HasFur(x)).
 
 %% A2: "All snakes are reptiles."
 
         all(x)(Snake(x) -> Reptile(x)).
-=======
-
-
-%% A1: "No reptiles have fur."
-
-        __A1__.
-
-%% A2: "All snakes are reptiles."
-
-        __A2__.
-
->>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
 
 end_of_list.
 
@@ -98,13 +93,7 @@ formulas(goals).
 
 %% GOAL: "No snakes have fur."
 
-<<<<<<< HEAD
-          all(x)(Snake(x) -> HasFur(x)).
+          all(x)(Snake(x) -> -HasFur(x)).
 
 end_of_list.
 
-=======
-          __G__.
-
-end_of_list.
->>>>>>> b029ccbd9d79f78dee73733ead2c23a80459e472
