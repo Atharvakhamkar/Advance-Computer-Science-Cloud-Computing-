@@ -1,0 +1,102 @@
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  clear(auto).
+  clear(auto_setup).
+  clear(auto_limits).
+  clear(auto_denials).
+  clear(auto_inference).
+  clear(auto_process).
+  assign(eq_defs, pass).
+  assign(max_seconds, 10).
+  assign(max_weight, 2147483647).
+  clear(predicate_elim).
+  set(binary_resolution).
+  set(paramodulation).
+  set(factor).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+if(Prover9). % Additional input for Prover9
+assign(sos_limit, -1).
+% Last line is a lie. It is there to stop the Prover9-Mace4
+% GUI giving a warning when the file is loaded.
+% This file was actually created by BB Prover9 Autograder
+end_if.
+
+formulas(assumptions).
+
+%% Hotspot
+%% A logic puzzle by Brandon Bennett
+
+%% Prover9 file: hotspot.p9
+
+%% To solve this first-order logic proof problem, you must replace
+%% each of the assumption place-holders __An__ and the goal place-holder
+%% __G__, with an approapriate first-order formula that captures the
+%% meaning of the given English sentence.
+
+%% Then run Prover9.
+%% If your representations are correct, it should find a Proof.
+%% You can also check your representations using the Gradescope Autograder.
+
+%% In writing the formulae, you should only use the following vocabulary:
+
+%% Logical symbols:           &  |  -  ->   <->  =  all  exists
+%% Brackets and separators:   ( )  [  ]  ,  .
+%% Variables:                 Whatever you like, but must be quantified.
+
+%% Propositions: LaptopInKitchen, SmartSpeakerFlashing, IHearMusic, WearingEarbuds,
+%%      LaptopOnline, WiFiUp, PhoneOn5G, LaptopInHotSpotRangePhone, PhoneInKitchen,
+%%      PhoneInLounge, PhoneInWashRoom, LaptopInWashRoom, PhoneOnTable, PhoneOnSofa
+
+%% Use only the specified vocabulary, otherwise the autograder will not work.
+
+%% A1: "The laptop is always in hotspot range of my phone except when one is in the
+%%      kitchen and the other in the wash room."
+
+        LaptopInHotSpotRangePhone <-> -((LaptopInKitchen & PhoneInWashRoom) | (LaptopInWashRoom & PhoneInKitchen)).
+
+%% A2: "If the smart speaker light is flashing, the WiFi is down."
+
+        SmartSpeakerFlashing -> -WiFiUp.
+
+%% A3: "If laptop is offline and I hear music, then I must be wearing earbuds."
+
+        (-LaptopOnline & IHearMusic) -> WearingEarbuds.
+
+%% A4: "If the the phone is in the kitchen, it is either on the table or on the sofa."
+
+        PhoneInKitchen -> (PhoneOnTable | PhoneOnSofa).
+
+%% A5: "The laptop is online if and only if either: (a) the WiFi is up; or (b) the phone
+%%      is connected to 5G and the phone is in hotspot range."
+
+        LaptopOnline <-> (WiFiUp | (PhoneOn5G & LaptopInHotSpotRangePhone)).
+
+%% A6: "The phone is neither on the table nor on the sofa."
+
+        -PhoneOnTable & -PhoneOnSofa.
+%% A7: "I hear music, the smart speaker light is flashing and laptop is in the kitchen."
+
+        IHearMusic & SmartSpeakerFlashing & LaptopInKitchen.
+
+%% A8: "The phone is in one of three rooms: kitchen or lounge, or wash room."
+
+        PhoneInKitchen | PhoneInLounge | PhoneInWashRoom.
+
+end_of_list.
+
+formulas(goals).
+
+%% GOAL: "Unless I'm wearing earbuds, the phone is in the lounge."
+
+          -WearingEarbuds -> PhoneInLounge.
+
+end_of_list.
+

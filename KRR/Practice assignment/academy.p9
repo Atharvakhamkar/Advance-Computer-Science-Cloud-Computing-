@@ -1,0 +1,100 @@
+% Saved by Prover9-Mace4 Version 0.5, December 2007.
+
+set(ignore_option_dependencies). % GUI handles dependencies
+
+if(Prover9). % Options for Prover9
+  clear(auto).
+  clear(auto_setup).
+  clear(auto_limits).
+  clear(auto_denials).
+  clear(auto_inference).
+  clear(auto_process).
+  assign(eq_defs, pass).
+  assign(max_weight, 2147483647).
+  clear(predicate_elim).
+  set(binary_resolution).
+  set(paramodulation).
+  set(factor).
+  assign(max_seconds, 60).
+end_if.
+
+if(Mace4).   % Options for Mace4
+  assign(max_seconds, 60).
+end_if.
+
+if(Prover9). % Additional input for Prover9
+assign(sos_limit, -1).
+% Last line is a lie. It is there to stop the Prover9-Mace4
+% GUI giving a warning when the file is loaded.
+% This file was actually created by BB Prover9 Autograder
+end_if.
+
+formulas(assumptions).
+
+%% The Academy
+%% A logic puzzle by Brandon Bennett
+
+%% Prover9 file: academy.p9
+
+%% To solve this first-order logic proof problem, you must replace
+%% each of the assumption place-holders __An__ and the goal place-holder
+%% __G__, with an approapriate first-order formula that captures the
+%% meaning of the given English sentence.
+
+%% Then run Prover9.
+%% If your representations are correct, it should find a Proof.
+%% You can also check your representations using the Gradescope Autograder.
+
+%% In writing the formulae, you should only use the following vocabulary:
+
+%% Logical symbols:           &  |  -  ->   <->  =  all  exists
+%% Brackets and separators:   ( )  [  ]  ,  .
+%% Variables:                 Whatever you like, but must be quantified.
+
+%% Names: plato, theano
+%% Properties: Happy, Logician, Engineer, Poet, Painter
+%% Relations: Older, Younger, Admires, Imitates, DreamsOfSuccess
+
+%% Use only the specified vocabulary, otherwise the autograder will not work.
+
+% A1: At least two painters are younger than Theano.
+exists x exists y (Painter(x) & Painter(y) & x != y & Younger(x,theano) & Younger(y,theano)).
+
+% A2: Anyone who admires someone older than themselves dreams of success.
+all x all y ((Admires(x,y) & Older(y,x)) -> DreamsOfSuccess(x)).
+
+% A3: If someone is older than another person, then they are older than everyone who is younger than the other.
+all x all y ((Older(x,y)) -> all z ((Younger(z,y)) -> Older(x,z))).
+
+% A4: Every painter admires exactly one logician (they do not necessarily admire the same one).
+all x (Painter(x) -> exists y (Logician(y) & Admires(x,y) &
+           all z ((Logician(z) & Admires(x,z)) -> z = y))).
+
+% A5: Among logicians, only Plato is admired by someone younger than Theano.
+all x ((Logician(x) & exists y (Younger(y,theano) & Admires(y,x))) -> x = plato).
+
+% A6: No engineer is a painter.
+all x (Engineer(x) -> -Painter(x)).
+
+% A7: Anyone who dreams of success and is happy is not a poet.
+all x ((DreamsOfSuccess(x) & Happy(x)) -> -Poet(x)).
+
+% A8: Admiration implies imitation.
+all x all y (Admires(x,y) -> Imitates(x,y)).
+
+% A9: The only logician who is older than Theano is Plato.
+all x ((Logician(x) & Older(x,theano)) -> x = plato).
+
+% A10: Everyone who imitates a logician is either a poet or an engineer.
+all x all y ((Imitates(x,y) & Logician(y)) -> (Poet(x) | Engineer(x))).
+
+end_of_list.
+
+formulas(goals).
+
+%% GOAL: "Not all poets are happy"
+
+         exists x (Poet(x) & -Happy(x)).
+
+end_of_list.
+
